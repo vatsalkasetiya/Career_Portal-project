@@ -1,0 +1,35 @@
+<form action="/career_prediction" method="POST">
+
+<input type="number" step="0.01" name="cgpa" placeholder="CGPA" required>
+
+<input type="number" name="python" placeholder="Python Skill (1-10)" required>
+
+<input type="number" name="communication" placeholder="Communication (1-10)" required>
+
+<input type="number" name="projects" placeholder="Projects" required>
+
+<input type="number" name="internships" placeholder="Internships" required>
+
+<select name="interest" required>
+    <option value="AI">AI</option>
+    <option value="Data Science">Data Science</option>
+    <option value="Web">Web</option>
+    <option value="Cyber">Cyber</option>
+    <option value="Cloud">Cloud</option>
+</select>
+
+<button type="submit">
+Predict Career
+</button>
+<a href="/dashboard">
+    <button>Back</button>
+</a>
+</form>
+
+{% if result %}
+
+<h2 style="margin-top:30px;color:#38bdf8;text-align:center;">
+Predicted Career : {{ result }}
+</h2>
+
+{% endif %}

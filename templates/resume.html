@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Resume Upload</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/career_prediction.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Upload Resume</h1>
+
+<form action="/resume" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="resume" required>
+
+<button type="submit">
+Upload Resume
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+<button>
+Back
+</button>
+{% if message %}
+<h2>{{ message }}</h2>
+{% endif %}
+</a>
+
+
+</div>
+
+</body>
+
+</html>

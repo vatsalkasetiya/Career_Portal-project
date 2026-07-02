@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Prediction History</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div style="padding:40px;">
+
+<h1>Prediction History</h1>
+
+<table border="1" cellpadding="15" cellspacing="0">
+
+<tr>
+
+<th>ID</th>
+<th>Career</th>
+<th>Date</th>
+
+</tr>
+
+{% for row in history %}
+
+<tr>
+
+<td>{{ row.id }}</td>
+
+<td>{{ row.predicted_career }}</td>
+
+<td>{{ row.created_at }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard">
+<button>Back</button>
+</a>
+
+
+</div>
+
+</body>
+</html>
